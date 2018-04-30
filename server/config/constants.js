@@ -1,4 +1,4 @@
 export default {
-  PORT: process.env.port || 3001,
+  PORT: process.env.PORT || 3001,
   DB_URL: "mongodb://localhost/story-development"
 };
