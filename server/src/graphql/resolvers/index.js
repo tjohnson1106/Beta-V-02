@@ -1,6 +1,7 @@
 import GraphQLDate from "graphql-date";
 
 import StoryResolvers from "./story-resolvers";
+import UserResolver from "./user-resolver";
 
 export default {
   Date: GraphQLDate,
@@ -11,6 +12,7 @@ export default {
   Mutation: {
     createStory: StoryResolvers.createStory,
     updateStory: StoryResolvers.updateStory,
-    deleteStory: StoryResolvers.deleteStory
+    deleteStory: StoryResolvers.deleteStory,
+    signup: UserResolver.signup
   }
 };
