@@ -1,5 +1,7 @@
 export default `
 
+scalar Date
+
 type Status {
     message: String!
 }
@@ -7,11 +9,13 @@ type Status {
 type Story {
     _id: ID!
     text: String!
+    createdAt: Date!
+    updatedAt: Date!
 }
 
 type Query {
     getStory(_id: ID!): Story
-getStorys: [Story]
+    getStorys: [Story]
 }
 
 type Mutation {
