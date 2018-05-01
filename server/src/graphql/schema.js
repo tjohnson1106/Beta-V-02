@@ -10,6 +10,5 @@ getStorys: [Story]
 
 schema {
     query: Query
-
 }
 `;
