@@ -34,6 +34,7 @@ type Mutation {
     updateStory(_id: ID!,  text: String, email: String): Story
     deleteStory(_id: ID!): Status
     signup(email: String!, fullName: String!, password: String!, avatar: String, username: String): User
+    login(email: String!, password: String!): User
 }
 
 schema {

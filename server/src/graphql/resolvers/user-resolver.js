@@ -8,5 +8,18 @@ export default {
       lastName,
       ...rest
     });
+  },
+  login: async (_, { email, password }) => {
+    const user = User.findOne({ email });
+
+    if (!user) {
+      throw new Error("User does not exist!");
+    }
+
+    if (!user.authenticateUser(password)) {
+      throw new Error("Password does not match!");
+    }
+
+    return user;
   }
 };
