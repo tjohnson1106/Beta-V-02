@@ -1,9 +1,9 @@
 import User from "../../models/User";
 
 export default {
-  signup: (_, { fullName, ...rest }) => {
+  signup: async (_, { fullName, ...rest }) => {
     const [firstName, ...lastName] = fullName.split("");
-    const user = User.create({
+    const user = await User.create({
       firstName,
       lastName,
       ...rest
