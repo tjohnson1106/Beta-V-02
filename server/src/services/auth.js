@@ -8,5 +8,5 @@ export function decodeToken(token) {
     return jwt.verify(arr[1], constants.JWT_SECRET);
     }
 
-    throw new Error ("Token is not valid");
+    throw new Error ("Token is not valid!");
 }
