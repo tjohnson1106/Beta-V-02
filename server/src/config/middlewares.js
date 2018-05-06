@@ -25,6 +25,8 @@ const schema = makeExecutableSchema({
       } else {
         req.user = null;
       }
+      return next();
+
     } catch (error) {
       throw error;
       
@@ -36,6 +38,7 @@ export default app => {
 
 
 app.use(bodyParser.json()); // body-parser acts as the json parser middleware
+app.use(auth);
 
 app.use(
   "/graphiql",
@@ -46,8 +49,11 @@ app.use(
 
 app.use(
   constants.GRAPHQL_PATH,
-  graphqlExpress({
-    schema
-  })
+  graphqlExpress(req => ({
+    schema,
+    context: {
+      user: req.user
+    }
+  }))
 );
 }
