@@ -22,6 +22,20 @@ type User {
     updatedAt: Date!
 }
 
+type Me {
+    _id: ID!
+    username: String
+    email: String!
+    firstName: String
+    lastName: String
+    avatar: String
+    createdAt: Date!
+    updatedAt: Date!
+
+}
+
+
+
 type Story {
     _id: ID!
     text: String!
@@ -32,6 +46,7 @@ type Story {
 type Query {
     getStory(_id: ID!): Story
     getStorys: [Story]
+    me: Me
 }
 
 type Mutation {
