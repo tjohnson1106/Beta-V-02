@@ -1,20 +1,42 @@
 import Story from "../../models/Story";
+import { requireAuth } from "../../services/auth";
 
 export default {
-  getStory: (_, { _id }) => Story.findById(_id),
-  getStorys: () => Story.find({}).sort({ createdAt: -1 }),
-  createStory: (_, args, ctx) => {
-    console.log("===================================");
-    console.log("CONTEXT", ctx);
-    console.log("==================================="); 
-
-  
-  return Story.create(args)
-
-},
-  updateStory: (_, { _id, ...rest }) => Story.findByIdAndUpdate(_id, rest),
-  deleteStory: async (_, { _id }) => {
+  getStory: async (_, { _id }, { user }) => {
     try {
+      await requireAuth(user);
+      Story.findById(_id);
+    } catch (error) {
+      throw error;
+    }
+  },
+  getStorys: async (_, args, { user }) => {
+    try {
+      await requireAuth(user);
+      return Story.find({}).sort({ createdAt: -1 });
+    } catch (error) {
+      throw error;
+    }
+  },
+  createStory: async (_, args, { user }) => {
+    try {
+      await requireAuth(user);
+      return Story.create(args);
+    } catch (error) {
+      throw error;
+    }
+  },
+  updateStory: async (_, { _id, ...rest }, { user }) => {
+    try {
+      await requireAuth(user);
+      return Story.findByIdAndUpdate(_id, rest);
+    } catch (error) {
+      throw error;
+    }
+  },
+  deleteStory: async (_, { _id }, { user }) => {
+    try {
+      await requireAuth(user);
       await Story.findByIdAndRemove(_id);
       return {
         message: "Delete Successful!"
