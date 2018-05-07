@@ -39,6 +39,8 @@ type Me {
 type Story {
     _id: ID!
     text: String!
+    user: User!
+    favoriteCount: Int!
     createdAt: Date!
     updatedAt: Date!
 }
