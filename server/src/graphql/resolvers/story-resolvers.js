@@ -5,7 +5,7 @@ export default {
   getStory: async (_, { _id }, { user }) => {
     try {
       await requireAuth(user);
-      Story.findById(_id);
+      return Story.findById(_id);
     } catch (error) {
       throw error;
     }
@@ -21,7 +21,7 @@ export default {
   createStory: async (_, args, { user }) => {
     try {
       await requireAuth(user);
-      return Story.create(args);
+      return Story.create({ ...args, user: user._id });
     } catch (error) {
       throw error;
     }

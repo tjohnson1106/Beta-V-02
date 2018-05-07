@@ -6,6 +6,9 @@ import User from "../../models/User";
 
 export default {
   Date: GraphQLDate,
+  Story: {
+    user: ({ user }) => User.findById(user)
+  },
   Query: {
     getStory: StoryResolvers.getStory,
     getStorys: StoryResolvers.getStorys,

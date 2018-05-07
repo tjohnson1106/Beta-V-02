@@ -14,7 +14,9 @@ export default {
       return {
         token: user.createToken()
       };
-    } catch (error) {}
+    } catch (error) {
+      throw error;
+    }
   },
   login: async (_, { email, password }) => {
     try {
