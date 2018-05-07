@@ -2,12 +2,14 @@ import GraphQLDate from "graphql-date";
 
 import StoryResolvers from "./story-resolvers";
 import UserResolvers from "./user-resolver";
+import User from "../../models/User";
 
 export default {
   Date: GraphQLDate,
   Query: {
     getStory: StoryResolvers.getStory,
-    getStorys: StoryResolvers.getStorys
+    getStorys: StoryResolvers.getStorys,
+    me: UserResolvers.me
   },
   Mutation: {
     createStory: StoryResolvers.createStory,
