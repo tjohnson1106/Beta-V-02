@@ -12,6 +12,7 @@ export default {
   Query: {
     getStory: StoryResolvers.getStory,
     getStorys: StoryResolvers.getStorys,
+    getUserStorys: StoryResolvers.getUserStorys,
     me: UserResolvers.me
   },
   Mutation: {

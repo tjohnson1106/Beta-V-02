@@ -18,6 +18,14 @@ export default {
       throw error;
     }
   },
+  getUserStorys: async (_, args, { user }) => {
+    try {
+      await requireAuth(user);
+      return Story.find({ user: user._id }).sort({ createdAt: -1 });
+    } catch (error) {
+      throw error;
+    }
+  },
   createStory: async (_, args, { user }) => {
     try {
       await requireAuth(user);

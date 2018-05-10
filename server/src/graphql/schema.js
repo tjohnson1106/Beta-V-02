@@ -48,6 +48,7 @@ type Story {
 type Query {
     getStory(_id: ID!): Story
     getStorys: [Story]
+    getUserStorys: [Story]
     me: Me
 }
 
