@@ -46,7 +46,14 @@ export default {
   deleteStory: async (_, { _id }, { user }) => {
     try {
       await requireAuth(user);
-      await Story.findByIdAndRemove(_id);
+
+      const story = await Story.findOne({ _id, user: user._id });
+
+      if (!story) {
+        throw new Error("Not found");
+      }
+      await story.remove();
+
       return {
         message: "Delete Successful!"
       };
