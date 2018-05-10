@@ -29,7 +29,16 @@ export default {
   updateStory: async (_, { _id, ...rest }, { user }) => {
     try {
       await requireAuth(user);
-      return Story.findByIdAndUpdate(_id, rest);
+      const story = await Story.findOne({ _id, user: user._id });
+
+      if (!story) {
+        throw new Error("Not found");
+      }
+
+      Object.entries(rest).forEach(([key, value]) => {
+        story[key] = value;
+      });
+      return story.save();
     } catch (error) {
       throw error;
     }
