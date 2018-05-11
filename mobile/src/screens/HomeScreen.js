@@ -5,7 +5,7 @@ import colors from "../utils/constants";
 import FeedCard from "../components/feedcard/FeedCard";
 
 const Root = styled.View`
-  background-color: #fff;
+  background-color: #f2f2f2;
   flex: 1;
   justify-content: center;
   shadow-color: ${props => props.theme.SECONDARY};

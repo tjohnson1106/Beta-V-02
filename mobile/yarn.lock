@@ -2,6 +2,10 @@
 # yarn lockfile v1
 
 
+"@appandflow/touchable@^2.0.0":
+  version "2.0.0"
+  resolved "https://registry.yarnpkg.com/@appandflow/touchable/-/touchable-2.0.0.tgz#6a37f4a85747475ff88d1ed15c49912001c1ab6b"
+
 "@babel/code-frame@7.0.0-beta.46":
   version "7.0.0-beta.46"
   resolved "https://registry.yarnpkg.com/@babel/code-frame/-/code-frame-7.0.0-beta.46.tgz#e0d002100805daab1461c0fcb32a07e304f3a4f4"
