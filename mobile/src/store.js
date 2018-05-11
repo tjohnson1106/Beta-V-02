@@ -1,15 +1,16 @@
 import { createStore, applyMiddleware } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
-import ApolloClient from "apollo-boost";
-import { HttpLink, createHttpLink } from "apollo-link-http";
+import ApolloClient, { createNetworkInterface } from "apollo-client";
 import thunk from "redux-thunk";
 
 import reducers from "./reducers";
 
-const link = createHttpLink({ uri: "http://localhost:3001/graphql" });
+const networkInterface = createNetworkInterface({
+  uri: "http://localhost:3001/graphql"
+});
 
 export const client = new ApolloClient({
-  link
+  networkInterface
 });
 
 const middlewares = [client.middleware(), thunk];

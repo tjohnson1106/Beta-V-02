@@ -1,11 +1,11 @@
 import React, { Component } from "react";
 import { UIManager } from "react-native";
-import { ApolloProvider } from "react-appollo";
+import { ApolloProvider } from "react-apollo";
 import { ThemeProvider } from "styled-components";
 
 import { store, client } from "./src/store";
 import { colors } from "./src/utils/constants";
-import Welcome from "./src/Components/Welcome";
+import HomeScreen from "./src/screens/HomeScreen";
 
 if (UIManager.setLayoutAnimationEnabledExperimental) {
   UIManager.setLayoutAnimationEnabledExperimental(true);
@@ -16,7 +16,7 @@ export default class App extends Component {
     return (
       <ApolloProvider store={store} client={client}>
         <ThemeProvider theme={colors}>
-          <Welcome />
+          <HomeScreen />
         </ThemeProvider>
       </ApolloProvider>
     );
