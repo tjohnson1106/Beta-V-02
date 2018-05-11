@@ -12,7 +12,6 @@ const Root = styled.View`
 
 const Button = styled.View`
   flex: 1;
-  background-color: red;
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
