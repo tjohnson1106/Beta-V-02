@@ -17,6 +17,7 @@ const AvatarContainer = styled.View`
   flex: 0.2;
   justify-content: center;
   align-self: stretch;
+  padding-right: 5;
 `;
 
 const Avatar = styled.Image`

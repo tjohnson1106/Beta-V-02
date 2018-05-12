@@ -6,7 +6,7 @@ import colors from "../../utils/constants";
 
 const Root = styled.View`
   height: 40;
-  background-color: transparent;
+  background-color: #c8e4e8;
   flex-direction: row;
 `;
 
@@ -15,13 +15,12 @@ const Button = styled.View`
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  padding-horizontal: 32px;
 `;
 
 const ButtonText = styled.Text`
   font-size: 14;
   font-weight: 500;
-  color: ${props => props.theme.LIGHT_GRAY};
+  color: #39043d;
 `;
 
 function FeedCardBottom() {
@@ -31,7 +30,7 @@ function FeedCardBottom() {
         <MaterialCommunityIcons
           name="heart-outline"
           size={20}
-          color="#CAD0D6"
+          color="#39043D"
         />
         <ButtonText>3</ButtonText>
       </Button>
@@ -40,7 +39,7 @@ function FeedCardBottom() {
         <MaterialCommunityIcons
           name="twitter-retweet"
           size={20}
-          color="#CAD0D6"
+          color="#39043D"
         />
         <ButtonText>3</ButtonText>
       </Button>
