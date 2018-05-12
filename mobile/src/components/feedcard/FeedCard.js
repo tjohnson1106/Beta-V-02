@@ -8,7 +8,7 @@ import FeedCardBottom from "./FeedCardBottom";
 
 const CardContentContainer = styled.View`
   flex: 1;
-  padding: 10px 20px 10px 5px;
+  padding: 10px 20px 10px 0px;
 `;
 
 const CardContentText = styled.Text`
@@ -30,7 +30,8 @@ function FeedCard() {
         shadowColor: "#444B52",
         shadowOffset: { width: 0, height: 2 },
         shadowRadius: 2,
-        shadowOpacity: 0.1
+        shadowOpacity: 0.1,
+        marginVertical: 5
       }}
     >
       <FeedCardHeader />

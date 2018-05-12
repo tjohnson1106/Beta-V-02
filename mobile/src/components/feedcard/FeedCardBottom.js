@@ -6,7 +6,7 @@ import colors from "../../utils/constants";
 
 const Root = styled.View`
   height: 40;
-  background-color: pink;
+  background-color: transparent;
   flex-direction: row;
 `;
 
