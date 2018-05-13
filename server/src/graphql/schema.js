@@ -43,6 +43,8 @@ type Story {
     favoriteCount: Int!
     createdAt: Date!
     updatedAt: Date!
+    imageUrl: String!
+    
 }
 
 type Query {

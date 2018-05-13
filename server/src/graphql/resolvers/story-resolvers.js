@@ -12,7 +12,7 @@ export default {
   },
   getStorys: async (_, args, { user }) => {
     try {
-      await requireAuth(user);
+      // await requireAuth(user);
       return Story.find({}).sort({ createdAt: -1 });
     } catch (error) {
       throw error;
